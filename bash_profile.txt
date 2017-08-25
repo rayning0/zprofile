@@ -193,4 +193,5 @@ function mkalias ()    # lets you make aliases from command line
 }
 
 # To run from Docker container, do
-# curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > .bash_profile; source .bash_profile
+# curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile
+# test
