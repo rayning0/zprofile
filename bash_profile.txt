@@ -202,6 +202,11 @@ alias r='rspec'
 alias h='cd ~; ls -lah'
 alias bp='source ~/.bash_profile'
 alias b='subl ~/.bash_profile'
+alias m='cd ~/code/mozart; ls -lah'
+alias ap='cd ~/code/mozart/code/ap; ls -lah'
+alias t='tail -f ~/code/mozart/code/ap/log/development.log'
+alias dcap='dc exec ap bash'
+
 
 function cdl { cd $1; ls -l;}
 
@@ -217,8 +222,7 @@ function mkalias ()    # lets you make aliases from command line
     fi
 }
 
-export PATH=$PATH:~/bin
+export PATH=~/bin:$PATH
 
 # To run from Docker container, do
 # curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile
-
