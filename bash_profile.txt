@@ -213,10 +213,10 @@ alias dcu='dc up -d'
 alias dcd='dc down'
 alias dcp='dc ps'
 alias dcl='dc logs -f'
-alias cbp='curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile'
+alias cbp="curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile"
 
-function dcr { dc restart $1 }
-function dcb { dc exec $1 bash }
+function dcr { dc restart $1; }
+function dcb { dc exec $1 bash; }
 
 function cdl { cd $1; ls -l;}
 
