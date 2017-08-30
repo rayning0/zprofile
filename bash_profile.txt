@@ -209,7 +209,14 @@ alias m='cd ~/code/mozart; ls -lah'
 alias ap='cd ~/code/mozart/code/ap; ls -lah'
 alias t='tail -f ~/code/mozart/code/ap/log/development.log'
 alias dcap='dc exec ap bash'
+alias dcu='dc up -d'
+alias dcd='dc down'
+alias dcp='dc ps'
+alias dcl='dc logs -f'
+alias cbp='curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile'
 
+function dcr { dc restart $1 }
+function dcb { dc exec $1 bash }
 
 function cdl { cd $1; ls -l;}
 
