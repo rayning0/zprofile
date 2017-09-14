@@ -200,6 +200,7 @@ function gfrf {
   alias rr="rake routes"
 
 #################################################
+alias be='bundle exec'
 alias s='subl .'
 alias r='rspec'
 alias h='cd ~; ls -lah'
@@ -213,12 +214,13 @@ alias dcu='dc up -d'
 alias dcd='dc down'
 alias dcp='dc ps'
 alias dcl='dc logs -f'
-alias cbp="curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile"
+alias cbp="curl https://raw.githubusercontent.com/rayning0/bash_profile/master/.bash_profile > ~/.bash_profile; source ~/.bash_profile"
 
 function dcr { dc restart $1; }
 function dcb { dc exec $1 bash; }
 
 function cdl { cd $1; ls -l;}
+function be { bundle exec $1; }
 
 # source ~/.git-prompt.sh
 # export PS1="\w\$(__git_ps1) >"  # sets bash terminal prompt
@@ -235,4 +237,8 @@ function mkalias ()    # lets you make aliases from command line
 export PATH=~/bin:$PATH
 
 # To run from Docker container, do
-# curl https://raw.githubusercontent.com/rayning0/bash_profile/master/bash_profile.txt > ~/.bash_profile; source ~/.bash_profile
+# curl https://raw.githubusercontent.com/rayning0/bash_profile/master/.bash_profile > ~/.bash_profile; source ~/.bash_profile
+
+eval "$(direnv hook bash)"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
