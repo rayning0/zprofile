@@ -206,14 +206,15 @@ alias r='rspec'
 alias h='cd ~; ls -lah'
 alias bp='source ~/.bash_profile'
 alias b='subl ~/.bash_profile'
-alias m='cd ~/code/mozart; ls -lah'
-alias ap='cd ~/code/mozart/code/ap; ls -lah'
 alias t='dc exec ap tail -f log/development.log'
+
+# Docker Compose
 alias dcap='dc exec ap bash'
 alias dcu='dc up -d'
 alias dcd='dc down'
 alias dcp='dc ps'
 alias dcl='dc logs -f'
+
 alias cbp="curl https://raw.githubusercontent.com/rayning0/bash_profile/master/.bash_profile > ~/.bash_profile; source ~/.bash_profile"
 
 function dcr { dc restart $1; }
