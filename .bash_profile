@@ -63,10 +63,10 @@ function f {
     # Editors
     # Tells your shell that when a program requires various editors, use sublime.
     # The -w flag tells your shell to wait until sublime exits
-    export VISUAL="subl -w"
-    export SVN_EDITOR="subl -w"
-    export GIT_EDITOR="subl -w"
-    export EDITOR="subl -w"
+    export VISUAL="code -w"
+    export SVN_EDITOR="code -w"
+    export GIT_EDITOR="code -w"
+    export EDITOR="code -w"
 
   # Paths
 
@@ -201,11 +201,12 @@ function gfrf {
 
 #################################################
 alias be='bundle exec'
+alias c='code .'
 alias s='subl .'
 alias r='rspec'
 alias h='cd ~; ls -lah'
 alias bp='source ~/.bash_profile'
-alias b='subl ~/.bash_profile'
+alias b='code ~/.bash_profile'
 alias t='dc exec ap tail -f log/development.log'
 
 # Docker Compose
@@ -243,3 +244,20 @@ export PATH=~/bin:$PATH
 eval "$(direnv hook bash)"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+alias mongod="/usr/local/mongodb/bin/mongod --config=/usr/local/mongodb/mongod.conf"
+alias mongo="/usr/local/mongodb/bin/mongo"
