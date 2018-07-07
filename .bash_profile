@@ -157,7 +157,10 @@ function extract () {
   alias ga="git add ."
   alias gb="git branch"
   alias gba="git branch -a"
-  alias grb="git rebase -i HEAD~2"
+  
+function grb {
+  git rebase -i HEAD\~$1
+}
 
 function gcb {
   git checkout -b $1
