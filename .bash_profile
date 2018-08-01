@@ -216,8 +216,10 @@ alias t='dc exec ap tail -f log/development.log'
 alias dcap='dc exec ap bash'
 alias dcu='dc up -d'
 alias dcd='dc down'
-alias dcp='dc ps'
+alias dps='docker ps'
 alias dcl='dc logs -f'
+alias dl='npm run docker:login'
+alias dprune='docker system prune --volumes'
 
 alias cbp="curl https://raw.githubusercontent.com/rayning0/bash_profile/master/.bash_profile > ~/.bash_profile; source ~/.bash_profile"
 
