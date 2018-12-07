@@ -48,8 +48,8 @@ function f {
     # This variable configures git to not require a message when you merge.
     export GIT_MERGE_AUTOEDIT='no'
     # Editors
-    # Tells your shell that when a program requires various editors, use sublime.
-    # The -w flag tells your shell to wait until sublime exits
+    # Tells your shell that when a program requires various editors, use VS Code.
+    # The -w flag tells your shell to wait until VS Code exits
     export VISUAL="code -w"
     export SVN_EDITOR="code -w"
     export GIT_EDITOR="code --wait"
