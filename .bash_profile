@@ -150,6 +150,17 @@ function gco { # checkout existing branch
 function gcm { # commit with a message
   git commit -m "$1"
 }
+
+function grau { # update fork (part 1)
+  git remote add upstream $1
+}
+
+function gupdate { # update fork (part 2)
+  git fetch upstream
+  git pull upstream master
+  git push -f
+}
+
 # Git Flow:
 function gffs {
   git flow feature start $1
