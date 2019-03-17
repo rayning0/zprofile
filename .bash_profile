@@ -137,6 +137,11 @@ function pfind {
   alias gba="git branch -a"
   alias grc="git rebase --continue"
 
+# git reset (delete) the last $1 commits
+function grs {
+  git reset --hard HEAD\~$1
+}
+
 # git rebase the last $1 commits
 function grb {
   git rebase -i HEAD\~$1
