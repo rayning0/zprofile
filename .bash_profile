@@ -139,12 +139,12 @@ function pfind {
 
 # git reset (delete) the last $1 commits
 function grs {
-  git reset --hard HEAD\~$1
+  git reset --hard HEAD~$1
 }
 
 # git rebase the last $1 commits
 function grb {
-  git rebase -i HEAD\~$1
+  git rebase -i HEAD~$1
 }
 function gcb { # create new branch
   git checkout -b $1
