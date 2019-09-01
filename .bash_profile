@@ -279,3 +279,9 @@ alias mongo="/usr/local/mongodb/bin/mongo"
 
 npm config delete prefix
 npm config set prefix $NVM_DIR/versions/node/v8.11.1
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=~/golib
+export PATH=$PATH:$GOPATH/bin
+export GOPATH=~/code
