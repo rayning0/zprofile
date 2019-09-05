@@ -1,0 +1,40 @@
+// In ~/Library/Application\ Support/Code/User/keybindings.json
+// Place your VS Code key bindings in this file to override the defaults
+[
+  {
+    "key": "alt+.",
+    "command": "workbench.action.debug.start",
+  },
+  {
+    "key": "alt+.",
+    "command": "workbench.action.debug.restart",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "f12",
+    "command": "workbench.action.debug.stepOut",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "f5",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f9",
+    "command": "workbench.action.debug.continue",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "cmd+=",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "cmd+-",
+    "command": "editor.action.fontZoomOut"
+  },
+  {
+    "key": "cmd+'",
+    "command": "workbench.action.terminal.new"
+  },
+]

@@ -1,0 +1,56 @@
+// Settings for VS Code:
+// In ~/Library/Application\ Support/Code/User/settings.json
+{
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "sublimeTextKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnPaste": true,
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  // Basic settings: turn linter(s) on
+  "ruby.lint": {
+    "reek": true,
+    "rubocop": true,
+    "ruby": true, //Runs ruby -wc
+    "fasterer": true,
+    "debride": true,
+    "ruby-lint": true
+  },
+  // Time (ms) to wait after keypress before running enabled linters. Ensures
+  // linters are only run when typing has finished and not for every keypress
+  "ruby.lintDebounceTime": 500,
+  "explorer.confirmDelete": false,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.emptySelectionClipboard": true,
+  "editor.fontSize": 12,
+  "workbench.colorTheme": "Default Light+",
+  "window.zoomLevel": 0,
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  // "[ruby]": {
+  //     "editor.formatOnSave": true
+  // },
+  "editor.formatOnSave": true,
+  "ruby.format": "rubocop",
+  "editor.formatOnSaveTimeout": 1500,
+  "debug.node.autoAttach": "off",
+  "ruby.intellisense": "rubyLocate",
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.inlineValues": true,
+  "debug.enableAllHovers": true,
+  "ruby.rubocop.onSave": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "sync.gist": "e3d2d1dcf501531a4eb6e9e1d85b2196"
+}
