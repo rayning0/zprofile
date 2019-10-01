@@ -196,6 +196,7 @@ alias bp='source ~/.bash_profile'
 alias b='code ~/.bash_profile'
 alias t='dc exec ap tail -f log/development.log'
 alias e='cd ~/eloquent-js; ls -lah'
+alias sound='sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod' # restarts sound on Mac
 
 # Docker--------------------
 # alias dcap='dc exec ap bash' # dc = docker compose
