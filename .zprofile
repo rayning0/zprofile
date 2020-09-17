@@ -30,7 +30,17 @@ function f {
       PS4='+ '
     }
   # Finally call the function and our prompt is all pretty
-  prompt
+  # prompt
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}("
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[red]%})%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_DIRTY="*"
+# ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+# %~ is the current working directory relative to the home directory
+# PROMPT='$(git_prompt_info) [$FG[red]%~%{$reset_color%}]'
+# PROMPT+=' %(?.$FG[154].$FG[009])>>$reset_color%} '
+
+
 # Environment Variables
 # =====================
   # Library Paths
@@ -125,16 +135,16 @@ function pfind {
   # LS
   alias l='ls -lah'
   # Git
-  alias gl="git log"
+
   alias gr="git remote -v"
   alias gs="git status"
   alias gp="git pull"
-  alias gd="git diff"
+  alias gd="git --no-pager diff"
   alias gc="git commit -v"
   alias gca="git commit -v -a"
   alias ga="git add ."
-  alias gb="git branch"
-  alias gba="git branch -a"
+  alias gb="git --no-pager branch"
+  alias gba="git --no-pager branch -a"
   alias grc="git rebase --continue"
 
 # git reset (delete) the last $1 commits
@@ -189,13 +199,18 @@ function gfrf {
 #################################################
 alias be='bundle exec'
 alias c='code .'
-alias s='subl .'
+alias ts='cd ~/tallyup-server; ls -lah'
 alias r='rspec'
 alias h='cd ~; ls -lah'
 alias bp='source ~/.bash_profile'
 alias b='code ~/.bash_profile'
+alias z='code ~/.zprofile'
+alias zp='source ~/.zprofile'
 alias t='dc exec ap tail -f log/development.log'
 alias e='cd ~/eloquent-js; ls -lah'
+alias ct='cd ~/ctci; ls -lah'
+alias g='cd ~/ctci/gtci/01-sliding-window; ls -lah'
+alias gic='cd ~/go-interpreter-compiler; ls -lah'
 alias sound='sudo launchctl stop com.apple.audio.coreaudiod && sudo launchctl start com.apple.audio.coreaudiod' # restarts sound on Mac
 
 # Docker--------------------
@@ -251,7 +266,7 @@ function drs { # restart container by image name
   docker restart $(docker ps -a -q --filter ancestor=$1)
 }
 
-alias cbp="curl https://raw.githubusercontent.com/rayning0/bash_profile/master/.bash_profile > ~/.bash_profile; source ~/.bash_profile"
+alias czp="curl https://raw.githubusercontent.com/rayning0/zsh_profile/master/.zprofile > ~/.zprofile; source ~/.zprofile"
 function cdl { cd $1; ls -l; }
 function be { bundle exec $1; }
 # source ~/.git-prompt.sh
@@ -273,16 +288,24 @@ export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
-PATH="/Users/rgan/.nvm/versions/node/v8.11.1/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$PATH"
+PATH="/Users/rgan/.nvm/versions/node/v10.16.3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$PATH"
 export PATH
 alias mongod="/usr/local/mongodb/bin/mongod --config=/usr/local/mongodb/mongod.conf"
 alias mongo="/usr/local/mongodb/bin/mongo"
 
 npm config delete prefix
-npm config set prefix $NVM_DIR/versions/node/v8.11.1
+npm config set prefix $NVM_DIR/versions/node/v10.16.3
 
 export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=~/golib
-export PATH=$PATH:$GOPATH/bin
-export GOPATH=~/code
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+alias gg="go build"
+alias gn="go run"
+alias gl="git log --reverse -10"
+alias gll="git log | less"
+ZSH_THEME="kphoen"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+alias python=/usr/local/bin/python3
+
+export ERL_AFLAGS="-kernel shell_history enabled"
