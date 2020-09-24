@@ -199,7 +199,6 @@ function gfrf {
 #################################################
 alias be='bundle exec'
 alias c='code .'
-alias ts='cd ~/tallyup-server; ls -lah'
 alias r='rspec'
 alias h='cd ~; ls -lah'
 alias bp='source ~/.bash_profile'
