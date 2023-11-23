@@ -1,6 +1,6 @@
-// Settings for VS Code:
 // In ~/Library/Application\ Support/Code/User/settings.json
 {
+  "go.formatTool": "goimports",
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
   "sublimeTextKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -8,8 +8,6 @@
   "editor.formatOnPaste": true,
   "editor.minimap.enabled": false,
   "editor.wordWrap": "on",
-  "editor.tabSize": 2,
-  "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   // Basic settings: turn linter(s) on
   "ruby.lint": {
@@ -32,25 +30,165 @@
   "editor.acceptSuggestionOnEnter": "off",
   "editor.emptySelectionClipboard": true,
   "editor.fontSize": 12,
-  "workbench.colorTheme": "Default Light+",
-  "window.zoomLevel": 0,
+"workbench.colorTheme": "Default Light+",
   "[json]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
-  // "[ruby]": {
-  //     "editor.formatOnSave": true
-  // },
-  "editor.formatOnSave": true,
   "ruby.format": "rubocop",
   "editor.formatOnSaveTimeout": 1500,
-  "debug.node.autoAttach": "off",
+  "debug.node.autoAttach": "on",
   "ruby.intellisense": "rubyLocate",
   "debug.allowBreakpointsEverywhere": true,
   "debug.inlineValues": true,
   "debug.enableAllHovers": true,
-  "ruby.rubocop.onSave": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "sync.gist": "e3d2d1dcf501531a4eb6e9e1d85b2196"
+  "sync.gist": "e3d2d1dcf501531a4eb6e9e1d85b2196",
+  "ruby.rubocop.executePath": "/Users/rgan/.rvm/gems/ruby-2.6.3/bin/rubocop",
+  "ruby.rubocop.onSave": false,
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "go.inferGopath": true,
+  "go.useLanguageServer": true,
+  "python.jediEnabled": false,
+  "[javascript]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.tabSize": 4
+  },
+  "editor.tabSize": 2,
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced"
+  },
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "elixir": "elixir",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runhaskell",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css"
+  },
+  "code-runner.executorMapByFileExtension": {
+    ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
+    ".vbs": "cscript //Nologo",
+    ".scala": "scala",
+    ".jl": "julia",
+    ".cr": "crystal",
+    ".ml": "ocaml",
+    ".ex": "elixir",
+    ".exs": "elixir",
+    ".hx": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    ".rkt": "racket",
+    ".scm": "csi -script",
+    ".ahk": "autohotkey",
+    ".au3": "autoit3",
+    ".kt": "cd $dir && kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar && java -jar $fileNameWithoutExt.jar",
+    ".kts": "kotlinc -script",
+    ".dart": "dart",
+    ".pas": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    ".pp": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    ".d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    ".hs": "runhaskell",
+    ".nim": "nim compile --verbosity:0 --hints:off --run",
+    ".csproj": "dotnet run --project",
+    ".fsproj": "dotnet run --project",
+    ".lisp": "sbcl --script",
+    ".kit": "kitc --run",
+    ".v": "v run",
+    ".vsh": "v run",
+    ".sass": "sass --style expanded",
+    ".cu": "cd $dir && nvcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+  },
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.enableCodeLens": {
+    "references": false,
+    "runtest": true
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "gitlens.advanced.messages": {
+    "suppressRebaseSwitchToTextWarning": true
+  },
+  "files.insertFinalNewline": true,
+  "[html-eex]": {
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+  },
+  "editor.formatOnSave": true,
+  "redhat.telemetry.enabled": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "python.languageServer": "Default",
+  "elixirLS.enableTestLenses": true,
+  "gitlens.codeLens.includeSingleLineSymbols": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "diffEditor.codeLens": true,
+  "terminal.integrated.inheritEnv": false,
+  "editor.inlineSuggest.enabled": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "settingsSync.ignoredExtensions": []
 }
