@@ -1,5 +1,5 @@
 // In ~/Library/Application\ Support/Code/User/keybindings.json
-// Place your VS Code key bindings in this file to override the defaults
+// Place your key bindings in this file to override the defaults
 [
   {
     "key": "alt+.",
@@ -36,5 +36,9 @@
   {
     "key": "cmd+'",
     "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "extension.changeCase.camel"
   },
 ]
